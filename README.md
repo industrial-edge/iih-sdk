@@ -1,128 +1,320 @@
-# Writing good how-to or tutorial
+# IIH Software Development Kit
 
-Before you start writing, read the following materials how to write good documentation (including how-tos).
+Welcome to the Industrial Information Hub Software Development Kit (IIH SDK).
 
-* [Google Developer style guide](https://developers.google.com/style)
-* [Technical writing Courses](https://developers.google.com/tech-writing)
-* [Microsoft Writing Style Guide](https://docs.microsoft.com/cs-cz/style-guide/welcome/)
+Your Developer Companion to guide you in the complete app development lifecycle. IIH SDK speed's up and enhances the overall app development experience on Siemens Industrial Edge Platform.
 
-Then decide: Are you writing a tutorial or a how-to guide?
+![Alt text](./docs/001_pages/01_home/_graphics/01_Overview.png)
 
-[Divio](https://documentation.divio.com/) explains the difference  (Note that this applies for software documentation for application developers)
+The IIH SDK speeds up and enhance the entire development lifecycle of IIH apps from creation to deployment. This allows the developer to focus more on the business logic and offload the app creation, generation and deployment to SDK.
 
-* Tutorials are lessons that take the reader by the hand through a series of steps to complete a project of some kind. They are what your project needs in order to show a beginner that they can achieve something with it. https://documentation.divio.com/tutorials/
-* How-to guides take the reader through the steps required to solve a real-world problem
+You can develop apps on your development machine/vm without a need of a physical Industrial Edge device or Industrial Edge Management. Additionally, SDK provides a data simulator to generate mock data for app testing and debugging.
 
-Each have a different writing style. Tutorials must be bullet proof (no unexpected behavior) https://documentation.divio.com/how-to-guides/
 
-Note: Try to write the tutorials and how-tos as a standalone html page, ready to be generated using Static site generator [MkDocs](https://www.mkdocs.org/). When referencing code examples or files, use the full URL of the git repository. We want to reuse these how-tos and tutorials in Documentation website.
+This repository contains the documentation providing details of SDK, how-to setup and manage the SDK and how-to use the app workflows with examples. Please use the contents section below to navigate the documentation.
 
-Don't explain concepts. [It gets in a way of action](https://documentation.divio.com/how-to-guides/#don-t-explain-concepts).  
+## Contents
+- [IIH Software Development Kit](#contents)
+    - [What SDK provides](#what-sdk-provides)
+    - [Core Components](#core-components)
+    - [Setup and Manage IIH SDK](#setup-and-manage-iih-sdk-on-developers-machinevm)
+        - [Requirements](#requirements)
+        - [Prerequisites](#prerequisites)
+        - [How to Install](#how-to-install)
+        - [How to Start](#how-to-start)
+        - [How to Stop](#how-to-stop)
+        - [How to Uninstall/Remove](#how-to-uninstallremove)
+    - [IIH App Workflows through example](#iih-app-workflows-through-example)
+        - [Create App](#create-your-app)
+        - [Test App](#test-you-app)
+        - [Deploy App](#deploy-your-app)
+    - [More Examples](#more-examples)
+    - [Current Capabilities](#current-capabilities)
+    - [Limitations](#limitations)
+    - [What's new](#whats-new)
+    - [Community](#community)
+    - [Contact us](#contact-us)
+    - [Contribution](#contribution)
+    - [Licence and Legal Information](#licence-and-legal-information)
+- [IIH Mendix Integration](#iih-mendix-integration)
 
-Don't use HTML tags unless working with videos. And try to avoid using videos unless absolutely necessary. Don't upload videos to Git repository.
 
-Bellow you can find the structure of IE tow-to/tutorial
+## What SDK Provides
 
-- [Writing good how-to or tutorial](#writing-good-how-to-or-tutorial)
-  - [Description](#description)
-    - [Overview](#overview)
-    - [General Task](#general-task)
-  - [Requirements](#requirements)
-    - [Prerequisites](#prerequisites)
-    - [Used components](#used-components)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Contribution](#contribution)
-  - [License and Legal Information](#license-and-legal-information)
-  - [Disclaimer](#disclaimer)
-    
-## Description
+The IIH SDK addresses the pain points associated with traditional development approaches. The key value add is given below.
 
-### Overview
+- **Speeding up App Development:**
+  The SDK accelerates app development through efficient Code Generation, allowing developers to focus on the core business logic.
 
-Why has been this how-to/tutorial created? What is the purpose?
+- **App Artifact Generation:**
+  Developers save time by leveraging automated app artifact generation, eliminating the manual effort required in configuring development environments.
 
-### General Task
+- **Overhead-Free Configurations:**
+  SDK mitigates the overhead of complex configurations, providing a more streamlined and developer-friendly experience.
 
-What is the general goal/task of this how-to/tutorial?
+- **Automated Deployment Builds:**
+  Automation of the .app build process ensures consistency and reliability in the application packaging phase.
 
-![task](docs/graphics/how-to-architecture-template.png)
+- **Optimizing Resource Utilization:**
+  The SDK optimizes resource utilization, ensuring efficient use of computing resources during both development and execution.
 
-PowerPoint template for architecture picture [download here](https://siemens.sharepoint.com/:p:/r/teams/EdgeTeam/Shared%20Documents/Quality%20gate/23_GitHub_HowTos/Architecture_Template.pptx?d=w0c8853c9bfdc4552adaddc2a7cabcda6&csf=1&web=1&e=3DBrgw).
 
-Save created architecture PowerPoint slides as separate file [here](https://siemens.sharepoint.com/teams/EdgeTeam-Discussion/Shared%20Documents/Forms/AllItems.aspx?RootFolder=%2Fteams%2FEdgeTeam%2DDiscussion%2FShared%20Documents%2FQuality%20Gate%20HQ%2FQuality%20Gate%20EU%2F23%5FGitHub%5FHowTos&FolderCTID=0x012000002421829443F54BAB033C81F598C9AD) for later updates and use.
+## Core Components
 
-## Requirements
+The SDK offers 3 major capabilities which not only ease up the app development process but also makes it very fast and efficient.
+
+![Alt text](./docs/001_pages/01_home/_graphics/02_Architecture.png)
+
+### 1. Create Your App - IIH App Code Generation
+   - Faster development through code generation (templates, libraries).
+   - Wraps the runtime dependencies and guides developers to add business logic in simple steps.
+
+### 2. Test you app - Local Testing & Debugging
+   - Efficient testing and debugging by emulating device services.
+   - Enables automation of unit tests in the development environment.
+   - Provides live metrics of dependency resource utilization.
+
+### 3. Deploy your app - Build & Publish
+   - Optimal packaging for delivery or deployment to IEM.
+   - Speeds up overall development time and enhances the app development experience.
+
+## Setup and Manage IIH SDK
+
+The SDK is currently packaged as an installable software on a debian based machine/vm. The installation is made very easy through a managing script. Please follow the steps below for installation.
+
+### Requirements
+
+- Debian based PC or VM.
+    - Min. 2 core CPU
+    - 8GB RAM
+    - 100GB HDDz
+    - No Graphic Card required
+- Internet access needed (to pull installation and base images from dockerhub)
+- Chrome Browser (Tested on : 122.0.6261.129 (Official Build) (64-bit) (cohort: Stable))
 
 ### Prerequisites
+ 
+- Please make sure Docker is installed and the local user is added to Docker User Group. [Instruction provided here.](https://docs.docker.com/engine/install/linux-postinstall/#configure-where-the-docker-daemon-listens-for-connections)
 
-What are the requirements on the user knowledge, HW components before starting the how-to?
+- One of the services of IIH SDK connects to the deamon over 2375 port. Please make sure the 2375 port is exposed following the steps given below.
 
-### Used components
+1. Create `daemon.json` file in `/etc/docker`:
 
-List the used software and hardware components that were tested with this how-to.
-Add the used components here (e.g.)
+        {"hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"]}
 
-* Industrial Edge App Publisher V1.0.8
-* Docker Engine 18.09.6
-* Docker Compose V2.4
-* S7 Connector V 1.0.22
-* S7 Connector Configurator V 1.0.9
-* Industrial Edge Device V 1.0.0-34
-* TIA Portal V16
-* PLC: CPU 1511 FW 2.8.3
+2. Add `/etc/systemd/system/docker.service.d/override.conf`
 
-## Installation
+        [Service]
+        ExecStart=
+        ExecStart=/usr/bin/dockerd
 
-How to install/run this application example? (i.e. how to deploy it to Industrial Edge device?) How to build this application? How to set up configurations in IE?
 
-To keep the readme.md file as short as possible please add more detailed information in the docs folder.
+3. Reload the systemd daemon:
 
-* [Build application](docs/Installation.md#build-application)
+        systemctl daemon-reload
 
-## Usage
+4. Restart docker:
 
-When the app is installed, how can I use it? Usually some basic UI description to prove that the app is working correctly.
+        systemctl restart docker.service
 
-## Documentation
+- Install make using the command below.
 
-Add links to documentation. Either on external URL or in the doc folder. Please use always link to a file not to a directory (it doesn't work with static site generator engines).
 
-Add these links:
 
-You can find further documentation and help in the following links
+        sudo apt install make
 
-* [Industrial Edge Hub](https://iehub.eu1.edge.siemens.cloud/#/documentation)
-* [Industrial Edge Forum](https://forum.industrial-edge.siemens.cloud)
-* [Industrial Edge Documentation](https://docs.industrial-edge.siemens.cloud/)
-* [Industrial Edge landing page](https://new.siemens.com/global/en/products/automation/topic-areas/industrial-edge/simatic-edge.html)
-* [Industrial Edge GitHub page](https://github.com/industrial-edge)
+
+### How to Install
+ 
+- Clone the [IIH SDK](https://github.com/industrial-edge/iih-sdk) repository to your system and navigate into the repo:
+ 
+``` cmd
+git clone https://github.com/industrial-edge/iih-sdk.git
+```
+``` cmd
+cd ./release-v-1-0/
+```
+ 
+- Provide execute permissions to the iih-sdk.sk manager script. 
+``` cmd
+sudo chmod +x iih-sdk.sh
+```
+ 
+- To install the IIH SDK run the below command.
+``` cmd
+./iih-sdk.sh install
+```
+You should observe images being pulled from dockerhub. If incase you observe any issues here, please check the internet access.
+
+### How to Start
+
+
+- To start the IIH SDK,  navigate into the cloned repository directory and run the below command.
+``` cmd
+./iih-sdk.sh start
+```
+
+Please type in the URL in your Chrome browser to access the web user interface.
+
+``` browser
+http://localhost:48080
+```
+
+### How to Stop
+
+- To stop the IIH SDK, navigate into the cloned repository directory and run the below command.
+``` cmd
+./iih-sdk.sh stop
+```
+
+### How to Uninstall/Remove
+- To Uninstall/remove the IIH SDK,  navigate into the cloned repository directory and run the below command.
+``` cmd
+./iih-sdk.sh remove
+```
+
+Mana
+
+## IIH App Workflows through example
+
+A overview of the app developer journey using the IIH SDK is given below. 
+
+![Alt text](./docs/001_pages/01_home/_graphics/03_App_Developer_Journey.png)
+
+Let's go through the above journey by creating a 'Hello World' app and observe the end-to-end app development workflows.
+
+### [**Create Your App**](./docs/001_pages/02_create_app/01-Create-Workflow.md)
+   - Faster development through code generation (templates, libraries).
+   - Wraps the runtime dependencies and guides developers to add business logic in simple steps.
+
+### [**Test you app**](./docs/001_pages/03_test_app/02-Test-Workflow.md)
+   - Efficient testing and debugging by emulating device services.
+   - Enables automation of unit tests in the development environment.
+   - Provides live metrics of dependency resource utilization.
+
+### [**Deploy your app**](./docs/001_pages/04_deploy_app/03-Deploy-Workflow.md)
+   - Optimal packaging for delivery or deployment to IEM.
+   - Speeds up overall development time and enhances the app development experience.
+
+After successfully testing and debugging the app and generating the `.app` file, please follow these steps for deployment:
+
+1. **Upload the `.app` File to IEM:**
+   - Locate the `.app` file in the release folder inside the app workspace. for further information on deploy workflow please go to this [link](./Workflows/03-Deploy-Workflow.md)
+   - Go to IEM and upload the `.app` file.
+
+2. **Deploy to IED:**
+   - After successful deployment on IEM management, install the application directly to IED.
+   - Ensure that IED is in the network of IEM and has sufficient space for the application.
+
+3. **Installation on IED:**
+   - Install the application on IED.
+
+4. **Verification on IED:**
+   - Go to IED to verify if the installation was successful.
+
+Voila! The app is now working on IED.
+
+## More Examples
+### Example 1
+
+Triangular wave using random data - provided by the Development Kit - Create an application without any service and form a **triangular** wave using **streamlit**.<br>
+Access the example [here](./docs/002_example_apps/001_Example_001/001_Example_001.md)
+
+#### Expected Result
+
+ ![Triangular wave ](./docs/002_example_apps/001_Example_001/_graphics/image.png)
+
+### Example 2
+
+Triangular wave using databus as service - provided by the Development Kit - Create an application to form a **triangular** wave using **Databus** and **flow creator** as service and get data through them. The data represented in a triangular wave form is created by using **streamlit**. <br>
+Access the example [here](./docs/002_example_apps/002_Example_002/002_Example_002.md)
+
+#### Expected Result 
+
+![Alt text](./docs/002_example_apps/002_Example_002/_graphics/image-10.png)
+
+
+## Example 3
+
+Triangular wave using IIH essentials - provided by the Development Kit - Create an application to form a **triangular** wave using **IIH essentials** and **IIH Simulator** as service to get data from **PLC** and visualize that data using **streamlit.**
+<br>
+Access the example [here](./docs/002_example_apps/003_Example_003/003_Example_003.md)
+
+#### Expected Result
+
+![Alt text](./docs/002_example_apps/003_Example_003/_graphics/image-1.png)
+
+
+
+
+
+### Current Capabilities
+
+As of now, the IIH SDK provides the following capabilities:
+
+- **App Generation for Python:**
+  Developers can generate Python-based applications with ease, leveraging the power and flexibility of the Python programming language.
+
+- **Emulation with IIH Apps:**
+  The SDK allows developers to emulate and test their applications seamlessly within the IIH ecosystem.
+
+- **Automated Packaging:**
+  The packaging process is automated, simplifying the deployment of applications to the Industrial Edge.
+
+
+## Limitations
+
+The IIH SDK is launched with the following restrictions.
+- Language Restriction: Presently, the SDK  exclusively supports the creation of Python language applications.
+- Service Customization Limitation: The ability to integrate custom services is not available in the Development Kit.
+- Deployment to IEM is not available in the launched version.
+
+
+## What's New
+
+<details>
+  <summary style="font-weight: bold; font-size: x-large;">v1.0.0 - 2024-03-20</summary>
+  </summary>
+  <h3>Launched with the below features/capabilities</h3>
+  <ul>
+    <li><h4>App Generation for Python</h4>
+    Developers can generate Python-based applications with ease, leveraging the power and flexibility of the Python programming language.</li>
+    <li><h4>Emulation with IIH Apps </h4>
+    The SDK allows developers to emulate and test their applications seamlessly within the IIH ecosystem.
+    </li>
+    <li><h4>Automated Deployment</h4>
+    The packaging process is automated, simplifying the deployment of applications to the Industrial Edge.</li>
+    <li><h4>App Workflow through example</h4></li>
+
+
+</details>
+
+## Community
+
+Please ask questions in the [Industrial Edge support forum](https://forum.industrial-edge.siemens.cloud/).
+
+## Contact us
+
+**** Check with Norman to create a support channel. ****
+
+For support requests contact your regional contact person. They take care of your concerns and give you feedback.
 
 ## Contribution
 
 Thank you for your interest in contributing. Anybody is free to report bugs, unclear documentation, and other problems regarding this repository in the Issues section.
 Additionally everybody is free to propose any changes to this repository using Pull Requests.
 
-If you haven't previously signed the [Siemens Contributor License Agreement](https://cla-assistant.io/industrial-edge/) (CLA), the system will automatically prompt you to do so when you submit your Pull Request. This can be conveniently done through the CLA Assistant's online platform.
-Once the CLA is signed, your Pull Request will automatically be cleared and made ready for merging if all other test stages succeed.
+If you haven't previously signed the [Siemens Contributor License Agreement](https://cla-assistant.io/industrial-edge/) (CLA), the system will automatically prompt you to do so when you submit your Pull Request. This can be conveniently done through the CLA Assistant's online platform. Once the CLA is signed, your Pull Request will automatically be cleared and made ready for merging if all other test stages succeed.
 
-## License and Legal Information
+# Licence and Legal Information
 
-Please read the [Legal information](LICENSE.txt).
+Please read the [Legal information](LICENSE.md) documentation.
 
-```
-TO BE DELETED: Depending on the content of your repository either choose the
-- LICENSE.md (In case no Source code is included) or the
-- LICENSE.txt file (Source Code is included)
-```
+# IIH Mendix Integration
 
-## Disclaimer
+Please Refer to the  [IIH Mendix integaration](./docs/001_pages/home/09_iih_mendix_integration/09-IIH-mendix.md) documentaiton for details.
 
-```
-Please add this Disclaimer in case your repository contains a Dockerfile otherwise you can remove the whole section
-```
 
-IMPORTANT - PLEASE READ CAREFULLY:
+- IIH Copilot and IIH Mendix
 
-This documentation describes how you can download and set up containers which consist of or contain third-party software. By following this documentation you agree that using such third-party software is done at your own discretion and risk. No advice or information, whether oral or written, obtained by you from us or from this documentation shall create any warranty for the third-party software. Additionally, by following these descriptions or using the contents of this documentation, you agree that you are responsible for complying with all third party licenses applicable to such third-party software. All product names, logos, and brands are property of their respective owners. All third-party company, product and service names used in this documentation are for identification purposes only. Use of these names, logos, and brands does not imply endorsement.
+   - [IIH-Copilot documentation](./00-What-is-SDK.md)

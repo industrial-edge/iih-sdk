@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  sdk-backend:
+    image: siemensindustrialedge/sdk-be:1.0.0
+    container_name: sdk-backend
+    env_file: .env
+    ports:
+      - "58080:80"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
+      driver: json-file
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${MOUNT_PATH}:/sdk-volume
+    restart: unless-stopped
+    networks:
+      industrial-edge-bridge-network:
+
+
+  sdk-codegen:
+    image: swaggerapi/swagger-generator-v3:3.0.46
+    container_name: sdk-codegen
+    networks:
+      industrial-edge-bridge-network:
+
+
+  sdk-frontend:
+    image: siemensindustrialedge/sdk-ui:1.0.0
+    container_name: sdk-frontend
+    ports:
+      - "48080:48080"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "2"
+      driver: json-file
+    restart: unless-stopped
+    networks:
+      industrial-edge-bridge-network:
+
+
+networks:
+  industrial-edge-bridge-network:
+    name: proxy-redirect
+    external: true
