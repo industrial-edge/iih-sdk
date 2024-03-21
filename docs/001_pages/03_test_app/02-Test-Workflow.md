@@ -1,6 +1,6 @@
 # Test Workflow
 
-The Test Workflow in the IIH Copilot Software Development Kit (SDK) focuses on efficient testing and debugging by emulating device services. This feature allows for the automation of unit tests in the development environment, ensuring faster testing and providing live metrics of dependency resource utilization. With this workflow, developers can streamline the testing and debugging process without the need to deploy and install the application on the Industrial Edge every time for testing.
+The Test Workflow in the IIH Software Development Kit (SDK) focuses on efficient testing and debugging by emulating device services. This feature allows for the automation of unit tests in the development environment, ensuring faster testing and providing live metrics of dependency resource utilization. With this workflow, developers can streamline the testing and debugging process without the need to deploy and install the application on the Industrial Edge every time for testing.
 
 ## Service Overview
 
@@ -8,18 +8,14 @@ The Test Workflow in the IIH Copilot Software Development Kit (SDK) focuses on e
 1. **IIH Essentials:**
    - Provides a user interface (UI).
    - Repository: [IIH Essentials Development Kit](https://github.com/industrial-edge/iih-essentials-development-kit-getting-started)
-   - User manual: [Documenttion](https://support.industry.siemens.com/cs/document/109823792/iih-essentials-for-industrial-edge?dti=0&lc=en-WW)
+   - User manual: [Documentation](https://support.industry.siemens.com/cs/document/109823792/iih-essentials-for-industrial-edge?dti=0&lc=en-WW)
 
 ### Platform Services
 1. **Common Configurator:**
    - Provides a user interface (UI).
    - User manual: [Documentation](
 https://support.industry.siemens.com/cs/document/109803582/iih-configurator-for-industrial-edge?dti=0&lc=en-WW)
-2. **IIH Semantics:**
-   - Repository: [IIH Semantics Getting Started](https://github.com/industrial-edge/iih-semantics-getting-started)
-    - User manual: [Documenttion](https://support.industry.siemens.com/cs/document/109823792/iih-essentials-for-industrial-edge?dti=0&lc=en-WW)
-3. **IIH Databus Gateway:** 
-4. **IIH Registry Service:**
+
 5. **Databus:**
     - User manual: [Databus](
 https://support.industry.siemens.com/cs/document/109821528/databus-v2-2-0?dti=0&lc=en-WW)
@@ -30,8 +26,8 @@ https://support.industry.siemens.com/cs/document/109821528/databus-v2-2-0?dti=0&
 2. **Flow Creator:**
    - Provides a user interface (UI).
 
-![Alt text](../assets/Workflows/02-Test-Workflow/image.png)
-![Alt text](../assets/Workflows/02-Test-Workflow/image-1.png)
+![Alt text](./_graphics/image1.png)
+![Alt text](./_graphics/image2.png)
 
 ## Workflow Page
 
@@ -40,7 +36,7 @@ https://support.industry.siemens.com/cs/document/109821528/databus-v2-2-0?dti=0&
 The Test Workflow page is designed with the following features:
 
 - **Services Tiles:**
-  - IIH Essentials (UI), Common Configurator (UI), IIH Semantics, IIH Databus Gateway, IIH Registry Service, Databus, IIH Essentials Simulator, Flow Creator (UI).
+  - IIH Essentials (UI), Databus, IIH Essentials Simulator, Flow Creator (UI).
   
 - **Buttons:**
   - **Start All Services:**

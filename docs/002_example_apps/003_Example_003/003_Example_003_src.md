@@ -1,5 +1,7 @@
 ## Main.py
-File path - services/(service_name)/src/main.py
+
+Please copy the python source code given below and replace the content of main.py. The file path is services/(service_name)/src/main.py
+
 ```
 import json
 import logging
@@ -37,18 +39,21 @@ if __name__=="__main__":
             st.write(df)
 ```
 
-## Dockerfile 
-File path - services/(service_name)/Dockerfile
 
-Add this command in dockerfile to run the your application
-```
-CMD ["streamlit", "run", "main.py", "--server.port", "8889"]
-```
 
 ## Pyproject.toml
-File path - services/(service_name)/pyproject.toml
+Please copy the configuration given below and append it to the right sections. 
 
-Add these dependencies in pyproject.toml
+Add the following depenedencies under the [tool.poetry.dependencies]. If incase you have other packages already, just append these lines. Also, please make sure the python is as needed for your app. PLease modify the version as needed, for example here we have the python version as 3.10.13, but if you are using a differect version, please verify.
+
+```
+[tool.poetry.dependencies]
+python = "3.10.13"
+paho-mqtt = "1.6.1"
+```
+
+Add this under [tool.poetry.dev-dependencies]. If incase you have other packages already, just append these lines. Please modify the version as needed, for example here we have the streamlit version as 1.20.0, but if you are using a different version, please verify.
+
 ```
 [tool.poetry.dependencies]
 python = "3.10.13"
@@ -56,10 +61,25 @@ streamlit = "1.20.0"
 plotly = "5.18.0"
 ```
 
-### Docker compose 
-file path - docker-compose.yml
+## Dockerfile 
+We have 2 stages in the Dockerfile, one for development and one for production. Please update the start commands 'CMD' as needed for your application. For this example, please replace the CMD in line no 30 and 37 with the CMD command given below.
 
-example - 
+The Docker file  path is - services/(service_name)/Dockerfile
+```
+CMD ["streamlit", "run", "main.py", "--server.port", "8889"]
+```
+
+### Docker compose 
+Since we are developing a applcation which has a web user interface, the port at which the server listens has to exposed. 
+
+Please add these lines to service in the existing docker-compose.yaml
+```
+    ports:
+      - 34001:34001
+```
+This will map the external port 34001 and to internal port 34001. 
+
+As an example, the modified docker compose file will look this if the service name is 'get-data-from-iih'. The service name in your case could be different, please verify. The docker compose file path - docker-compose.yml
 
 ```
 version: "2.4"
@@ -87,8 +107,3 @@ volumes:
     name: app-volume
 
 ```
-
-[Deploy](../Workflows/03-Deploy-Workflow.md) your application as the final step to generate .app file.
-Go to your project directory and you'll find a release folder in it. The .app file will be generated there.
-
-

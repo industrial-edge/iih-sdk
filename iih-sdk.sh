@@ -126,7 +126,7 @@ then
 	esac
 else
 	echo "Invalid Usage or Option. Please use as given below."
-	echo "./iih-sdk.sh install"
+    echo "./iih-sdk.sh install"
 	echo "./iih-sdk.sh start"
 	echo "./iih-sdk.sh stop"
     echo "./iih-sdk.sh remove"

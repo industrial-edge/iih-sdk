@@ -11,17 +11,17 @@ After the successful testing and debugging of the application, the next step is 
    1. When no app is created
       - Click on "Create New App" to initiate the deployment process.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-6.png)
+![Alt text](./_graphics/image-6.png)
 
    2. When apps are already there
       - Click on "Create New App" in the top right corner of the screen.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-1.png)
+![Alt text](./_graphics/image-1.png)
 
 3. **App Workspace Path:**
    - Provide the app workspace path where the `metaconfig.json` file is located.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image.png)
+![Alt text](./_graphics/image.png)
 
 4. **Verification:**
    - Once the app workspace path is provided, the workflow will verify the details.
@@ -41,7 +41,7 @@ After the successful testing and debugging of the application, the next step is 
 3. **App Description:**
    - Provide a brief description of your application.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-3.png)
+![Alt text](./_graphics/image-3.png)
 
 ### Developer Settings
 
@@ -67,7 +67,7 @@ After the successful testing and debugging of the application, the next step is 
 3. **Sign-Up Type:**
    - (Phase 2 Feature) Specify the sign-up type for your application.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-4.png)
+![Alt text](./_graphics/image-4.png)
 
 ### Configuration
    - Default app configuration is set, but you can customize by clicking the checkbox and adding custom configurations.
@@ -107,8 +107,11 @@ After the successful testing and debugging of the application, the next step is 
 17. **Application Creation Complete:**
     - Upon successful completion of all stages, your application is now ready for deployment.
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-5.png)
+![Alt text](./_graphics/image-5.png)
 
-![Alt text](../assets/Workflows/03-Deploy-Workflow/image-2.png)
+![Alt text](./_graphics/image-2.png)
 
-Now your application is ready for deployment, and the generated .app file can be utilized for installation on edge devices.
+
+### End of te above steps, the `.app` file in created in the release folder in your app workspace.
+
+### Now your application is ready for importing to IEM.

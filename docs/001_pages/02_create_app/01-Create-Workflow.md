@@ -14,7 +14,7 @@
    - **Reset:** Clears the entered information.
    - **Proceed:** Takes you to the next step.
 
-![Alt text](../assets/Workflows/01-Create-Workflow/image.png)
+![Alt text](./_graphics/image.png)
 ### Define Your Services
 
 1. **Your Services:**
@@ -27,14 +27,14 @@
 3. **Dependent Services:**
    - Choose services from:
      - In Core: IIH Essentials
-     - In Platform: IIH Semantics and Databus
+     - In Platform: Databus
    - Select multiple services as needed.
 
 4. **Buttons:**
    - **Back:** Returns to the previous step.
    - **Proceed:** Moves to the next step.
 
-![Alt text](../assets/Workflows/01-Create-Workflow/image-1.png)
+![Alt text](./_graphics/image-1.png)
 
 ### Create App Summary
 
@@ -46,7 +46,7 @@
    - **Back to Services Form:** Returns to the services form for any modifications.
    - **Generate Source Code:** Proceed to generate source code.
 
-![Alt text](../assets/Workflows/01-Create-Workflow/image-2.png)
+![Alt text](./_graphics/image-2.png)
 
 ### Generate Source Code
 
