@@ -3,7 +3,7 @@
 Triangular wave using databus as service - provided by the Development Kit - Create an application to form a **triangular** wave using **Databus** and **flow creator** as service and get data through them. The data represented in a triangular wave form is created by using **streamlit**.
 
 1. [Create your application](../../001_pages/02_create_app/01-Create-Workflow.md) - Enter the name and description of your application. Add service and select Databus from the dropdown. Proceed to app summary and review it.
-2. Download your application - After reviewing the application, start generating the source code. Once the downlaod is complete you can extract the zip file in your desired location adn open it in VS Code.
+2. Download your application - After reviewing the application, start generating the source code. Once the download is complete you can extract the zip file in your desired location and open it in VS Code.
 3. [Start services for application](../../001_pages/03_test_app/02-Test-Workflow.md) - Go to test workflow and start databus service and flow creator app. Redirect to flow creator using the button and create the flow to receive timestamp. 
    
 ![Alt text](./_graphics/image-5.png)
@@ -74,7 +74,7 @@ docker compose up
 
 ![Alt text](./_graphics/image-10.png)
 
-After successfull completion. You can expose the port in docker compose yml to build and publish the application in IEM. 
+After successful completion. You can expose the port in docker compose yml to build and publish the application in IEM. 
 
 
 Once the local testing and debugging phase is completed, let's deploy your application by generation the .app file which can be sideloaded to IEM. Please go through the below page for steps.
