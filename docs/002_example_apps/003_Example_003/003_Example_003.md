@@ -73,7 +73,7 @@ To connect the tag to the IIH Essentials, follow these steps:
 
 9. Build the Image - Once the code is ready, build the image. 
 
-    Please navigate to your app repository/directory. To build your service, please append your service name with '_build'. In our example, the service we want to build is 'get-data-from-iih'. So the make command would look like below.
+    Please navigate to your app repository/directory. To build your service, please append your service name with '_build'. In our example, the service we want to build is 'get-data-from-iih'. So, the make command would look like below.
 
 ```
 make get-data-from-iih_build
