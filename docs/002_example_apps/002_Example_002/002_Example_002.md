@@ -23,20 +23,19 @@ Triangular wave using databus as service - provided by the Development Kit - Cre
    - Configure the function 
     
    ![Alt text](./_graphics/image-8.png)
-      Code Snippet - 
 
-      ```
-      var counter = flow.get("counter")||0;
-      if (msg.topic =="timestamp"){
-         counter = counter +0.1;
-         if (counter>0.5){
-            counter - 0;
-         }
-         flow.set("counter", counter);
+   ``` javascript
+   var counter = flow.get("counter")||0;
+   if (msg.topic =="timestamp"){
+      counter = counter +0.1;
+      if (counter>0.5){
+         counter - 0;
       }
-      var newMsg = {payload: Math.round(counter*10)/10}
-      return newMsg
-      ```
+      flow.set("counter", counter);
+   }
+   var newMsg = {payload: Math.round(counter*10)/10}
+   return newMsg
+   ```
 
    - Edit the mqtt-broker node
     
