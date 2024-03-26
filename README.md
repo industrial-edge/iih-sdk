@@ -96,26 +96,7 @@ Debian-based PC or VM.
  
 - Please make sure Docker is installed and the local user is added to the Docker User Group. [Instruction is provided here.](https://docs.docker.com/engine/install/linux-postinstall/#configure-where-the-docker-daemon-listens-for-connections)
 
-- One of the services of IIH SDK connects to the daemon over 2375 port. Please make sure the 2375 port is exposed following the steps given below.
-
-1. Create `daemon.json` file in `/etc/docker`:
-
-       {"hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"]}
-
-2. Add `/etc/systemd/system/docker.service.d/override.conf`
-
-       [Service]
-       ExecStart=
-       ExecStart=/usr/bin/dockerd
-
-
-3. Reload the systemd daemon:
-
-       systemctl daemon-reload
-
-4. Restart docker:
-
-       systemctl restart docker.service
+- One of the services of IIH SDK connects to the daemon over 2375 port. Please make sure the 2375 port is exposed following the steps from the [docker docs](https://docs.docker.com/config/daemon/remote-access/).
 
 - Install make using the command below.
 
