@@ -55,7 +55,7 @@ paho-mqtt = "1.6.1"
 Add this under [tool.poetry.dev-dependencies]. If incase you have other packages already, just append these lines. Please modify the version as needed, for example here we have the streamlit version as 1.20.0, but if you are using a different version, please verify.
 
 ```
-[tool.poetry.dependencies]
+[tool.poetry.dev-dependencies]
 python = "3.10.13"
 streamlit = "1.20.0"
 plotly = "5.18.0"
