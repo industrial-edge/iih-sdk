@@ -3,8 +3,8 @@
 Triangular wave using IIH essentials - provided by the Development Kit - Create an application to form a **triangular** wave using **IIH essentials** and **IIH Simulator** as service to get data from **PLC** and visualize that data using **streamlit.**
 
 1. Create your application - Enter the name and description of your application. Add service and select IIH Essentials from the dropdown. Proceed to app summary and review it.
-2. Download your application - After reviewing the application, start generating the source code. Once the downlaod is complete you can extract the zip file in your desired location adn open it in VS Code.
-3. Start services for application - Go to test workflow and start IIH Essentials and IIH Simultion.
+2. Download your application - After reviewing the application, start generating the source code. Once the download is complete you can extract the zip file in your desired location and open it in VS Code.
+3. Start services for application - Go to test workflow and start IIH Essentials and IIH Simulation.
 4. PLC Configuration - Configure the PLC to send the data to IIH Essentials which can then send data to the application.
 5. Create new Tag in Simulation UI.
 To create a tag, follow these steps:
@@ -79,7 +79,7 @@ To connect the tag to the IIH Essentials, follow these steps:
 make get-data-from-iih_build
 ```
 
-10. Run your application to test if it works as expected - Start the docker compose to check if the application is running on the desired port.You must be in the same path where the docker compose yml file is placed.
+10. Run your application to test if it works as expected - Start the docker compose to check if the application is running on the desired port. You must be in the same path where the docker compose yml file is placed.
 
 ```
 docker compose up
@@ -89,7 +89,7 @@ docker compose up
 
 ![Alt text](./_graphics/IIHessentialdep.png)
 
-After successfull completion. You can expose the port in docker compose yml to build and publish the application in IEM. 
+After successful completion. You can expose the port in docker compose yml to build and publish the application in IEM. 
 
 Once the local testing and debugging phase is completed, let's deploy your application by generation the .app file which can be sideloaded to IEM. Please go through the below page for steps.
 
