@@ -31,7 +31,7 @@ Triangular wave using databus as service - provided by the Development Kit - Cre
 
 
 
-3. Business Logic - Add business logic to your application for generating triangular wave using tiemstamp data received from databus and flow creator. You can find the source code for this example [here](../source-code/Triangular-wave-02-databusdependency)
+3. Business Logic - Add business logic to your application for generating triangular wave using timestamp data received from databus and flow creator. You can find the source code for this example [here](../source-code/Triangular-wave-02-databusdependency)
 4. Build the image - Building the image can be done by command
 
 ```
