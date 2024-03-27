@@ -63,7 +63,7 @@ if __name__=="__main__":
 ## Pyproject.toml
 Please copy the configuration given below and append it to the right sections. 
 
-Add the following depenedencies under the [tool.poetry.dependencies]. If incase you have other packages already, just append these lines. Also, please make sure the python is as needed for your app. PLease modify the version as needed, for example here we have the python version as 3.10.13, but if you are using a differect version, please verify.
+Add the following dependencies under the [tool.poetry.dependencies]. If incase you have other packages already, just append these lines. Also, please make sure the python is as needed for your app. Please modify the version as needed, for example here we have the python version as 3.10.13, but if you are using a different version, please verify.
 
 ```
 [tool.poetry.dependencies]
@@ -89,7 +89,7 @@ CMD ["streamlit", "run", "main.py", "--server.port", "8888"]
 ```
 
 ### Docker compose 
-Since we are developing a applcation which has a web user interface, the port at which the server listens has to exposed. 
+Since we are developing a application which has a web user interface, the port at which the server listens has to exposed. 
 
 Please add these lines to service in the existing docker-compose.yaml
 ```

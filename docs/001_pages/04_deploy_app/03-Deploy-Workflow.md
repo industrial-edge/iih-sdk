@@ -10,8 +10,7 @@ After the successful testing and debugging of the application, the next step is 
 2. **Create New App:**
    1. When no app is created
       - Click on "Create New App" to initiate the deployment process.
-
-![Alt text](./_graphics/image-6.png)
+   ![Alt text](./_graphics/image-6.png)
 
    2. When apps are already there
       - Click on "Create New App" in the top right corner of the screen.
